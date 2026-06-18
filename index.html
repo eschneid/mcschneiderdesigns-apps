@@ -3,61 +3,317 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>McSchneider Design Studios — Apps</title>
+  <title>McSchneider Design Studios</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0d0f14;
+      --surface:   #161920;
+      --border:    #2a2d38;
+      --gold:      #f0a500;
+      --gold-dim:  #a86e00;
+      --text:      #e8e8ec;
+      --muted:     #7a7d8a;
+      --ios:       #f0a500;
+      --android:   #c8e06a;
+    }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: #0a0a0f;
-      color: #e2e8f0;
-      line-height: 1.7;
-      padding: 2rem 1rem 4rem;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Montserrat', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    .container { max-width: 700px; margin: 0 auto; }
+
+    /* ── Header ── */
     header {
-      margin-bottom: 2.5rem;
-      border-bottom: 1px solid #1e293b;
-      padding-bottom: 1.5rem;
+      width: 100%;
+      padding: 48px 24px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
     }
-    header h1 { font-size: 1.75rem; font-weight: 700; color: #f8fafc; letter-spacing: -0.02em; }
-    header p { color: #64748b; margin-top: 0.4rem; font-size: 0.9rem; }
-    h2 { font-size: 1.1rem; font-weight: 600; color: #f1f5f9; margin: 2rem 0 0.6rem; }
+
+    .wordmark {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .studio-name {
+      font-size: clamp(22px, 5vw, 34px);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    .studio-name span {
+      color: var(--gold);
+    }
+
+    .tagline {
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      margin-top: 4px;
+    }
+
+    .gold-rule {
+      width: 48px;
+      height: 2px;
+      background: var(--gold);
+      margin: 20px auto 0;
+      border-radius: 1px;
+    }
+
+    /* ── App Grid ── */
+    main {
+      width: 100%;
+      max-width: 560px;
+      padding: 48px 24px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 4px;
+    }
+
+    /* ── App Card ── */
     .app-card {
-      background: #111827;
-      border: 1px solid #1e293b;
-      border-radius: 10px;
-      padding: 1.25rem 1.5rem;
-      margin-bottom: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
     }
-    .app-card h3 { color: #f8fafc; font-size: 1.05rem; margin-bottom: 0.25rem; }
-    .app-card p { color: #94a3b8; font-size: 0.9rem; margin-bottom: 0.6rem; }
-    a { color: #38bdf8; text-decoration: none; font-size: 0.9rem; }
-    a:hover { text-decoration: underline; }
-    footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #1e293b; font-size: 0.85rem; color: #475569; }
+
+    .app-card:hover {
+      border-color: var(--gold-dim);
+      transition: border-color 0.2s ease;
+    }
+
+    .app-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .app-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 14px;
+      object-fit: cover;
+      flex-shrink: 0;
+      background: var(--border);
+    }
+
+    .app-icon-placeholder {
+      width: 60px;
+      height: 60px;
+      border-radius: 14px;
+      background: var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+
+    .app-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .app-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .app-desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── Store Buttons ── */
+    .store-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .store-btn {
+      flex: 1;
+      min-width: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      transition: opacity 0.15s ease, transform 0.15s ease;
+      border: 1px solid transparent;
+    }
+
+    .store-btn:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
+
+    .store-btn:active {
+      transform: translateY(0);
+    }
+
+    .btn-ios {
+      background: rgba(240, 165, 0, 0.12);
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .btn-android {
+      background: rgba(200, 224, 106, 0.10);
+      border-color: var(--android);
+      color: var(--android);
+    }
+
+    .store-btn svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: auto;
+      padding: 24px;
+      text-align: center;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--gold);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .store-btn { transition: none; }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>McSchneider Design Studios</h1>
-      <p>Public documents for apps by McSchneider Design Studios</p>
-    </header>
 
-    <h2>Apps</h2>
+  <header>
+    <p class="wordmark">Independent Mobile Apps</p>
+    <h1 class="studio-name">McSchneider<span> Design Studios</span></h1>
+    <p class="tagline">Built with care. Available everywhere.</p>
+    <div class="gold-rule"></div>
+  </header>
 
+  <main>
+
+    <p class="section-label">Our Apps</p>
+
+    <!-- Watchtower -->
     <div class="app-card">
-      <h3>Oh Hell!</h3>
-      <p>A trick-taking card game for 2–7 players.</p>
-      <a href="ohhell-privacy.html">Privacy Policy →</a>
+      <div class="app-header">
+        <div class="app-icon-placeholder">🗼</div>
+        <div class="app-meta">
+          <p class="app-name">Watchtower: TV &amp; Movie Tracker</p>
+          <p class="app-desc">Track every show and movie. Episode countdowns, weekly schedule, and streaming info — all in one place.</p>
+        </div>
+      </div>
+      <div class="store-buttons">
+        <a class="store-btn btn-ios"
+           href="https://apps.apple.com/us/app/watchtower-tv-movie-tracker/id6762326632"
+           target="_blank" rel="noopener">
+          <!-- Apple logo -->
+          <svg viewBox="0 0 814 1000" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-43.4-150.3-113.4C46 376.6 0 305.2 0 239.1 0 113.3 81.4 46.6 160.3 46.6c49.1 0 90.1 32.8 120.9 32.8 28.8 0 74.4-35.2 130.7-35.2 21.3 0 109.4 1.9 166.5 82.5zm-56.9-85.5C766.4 210.1 778.3 168 778.3 126c0-5.8-.5-11.5-1.5-17.1-48.4 1.8-106.5 32.3-141.5 79.2-27.5 34.8-53.2 91.1-53.2 148.2 0 6.5 1 13 1.5 15.1 3.3.5 8.6 1.1 14 1.1 43.3 0 97.6-29.1 129.5-77.1z"/>
+          </svg>
+          App Store
+        </a>
+        <a class="store-btn btn-android"
+           href="https://play.google.com/store/apps/details?id=com.mcschneiderdesignstudios.watchtower"
+           target="_blank" rel="noopener">
+          <!-- Google Play triangle -->
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 20.5v-17c0-.83 1-.93 1.4-.4l14 8.5c.37.23.37.77 0 1L4.4 21.1c-.4.4-1.4.2-1.4-.6z"/>
+          </svg>
+          Google Play
+        </a>
+      </div>
     </div>
 
+    <!-- Oh Hell -->
     <div class="app-card">
-      <h3>Watchtower</h3>
-      <p>Personal media tracking app.</p>
-      <a href="watchtower-privacy.html">Privacy Policy →</a>
+      <div class="app-header">
+        <div class="app-icon-placeholder">🃏</div>
+        <div class="app-meta">
+          <p class="app-name">Oh Hell – Game Night</p>
+          <p class="app-desc">The classic bidding card game your family loves, now on your phone. Same rules, same fun — no cards required.</p>
+        </div>
+      </div>
+      <div class="store-buttons">
+        <a class="store-btn btn-ios"
+           href="https://apps.apple.com/us/app/oh-hell-game-night/id6775219872"
+           target="_blank" rel="noopener">
+          <svg viewBox="0 0 814 1000" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-43.4-150.3-113.4C46 376.6 0 305.2 0 239.1 0 113.3 81.4 46.6 160.3 46.6c49.1 0 90.1 32.8 120.9 32.8 28.8 0 74.4-35.2 130.7-35.2 21.3 0 109.4 1.9 166.5 82.5zm-56.9-85.5C766.4 210.1 778.3 168 778.3 126c0-5.8-.5-11.5-1.5-17.1-48.4 1.8-106.5 32.3-141.5 79.2-27.5 34.8-53.2 91.1-53.2 148.2 0 6.5 1 13 1.5 15.1 3.3.5 8.6 1.1 14 1.1 43.3 0 97.6-29.1 129.5-77.1z"/>
+          </svg>
+          App Store
+        </a>
+        <a class="store-btn btn-android"
+           href="https://play.google.com/store/apps/details?id=com.mcschneiderdesigns.ohhell"
+           target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 20.5v-17c0-.83 1-.93 1.4-.4l14 8.5c.37.23.37.77 0 1L4.4 21.1c-.4.4-1.4.2-1.4-.6z"/>
+          </svg>
+          Google Play
+        </a>
+      </div>
     </div>
 
-    <footer>&copy; 2026 McSchneider Design Studios</footer>
-  </div>
+  </main>
+
+  <footer>
+    <p>© 2026 McSchneider Design Studios &nbsp;·&nbsp;
+      <a href="https://eschneid.github.io/mcschneiderdesigns-apps/watchtower-privacy.html">Privacy Policy</a>
+      &nbsp;·&nbsp;
+      <a href="mailto:support@mcschneiderdesigns.com">support@mcschneiderdesigns.com</a>
+    </p>
+  </footer>
+
 </body>
 </html>
