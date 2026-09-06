@@ -1,0 +1,19 @@
+# FTP credentials — must never be committed (this repo is public)
+.mcs-ftp
+*.mcs-ftp
+sftp.json
+.vscode/sftp.json
+
+# Deploy tooling: keeps the FTP hostname out of the public repo.
+# Safe to remove this line and commit it if you don't mind that being public.
+deploy.sh
+
+# Stale duplicate of the site. The repo root is what deploys; this drifts.
+# Kept on disk, out of the repo.
+website/
+
+# Raw screenshots showing a real person's face and name. The anonymised
+# versions (friends_clean.png, new_friends_add_anon.png) are committed instead
+# and are what the published images are built from.
+watchtower/images/new_friends_add.png
+watchtower/images/new_friends_add2.png
