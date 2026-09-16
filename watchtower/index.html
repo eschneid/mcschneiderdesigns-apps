@@ -179,7 +179,8 @@ section{position:relative;z-index:1}
 .feats-2col{grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px 56px;margin-top:54px}
 .feats-wide{grid-template-columns:repeat(auto-fit,minmax(420px,1fr))}
 .pair figure{margin:0}
-.pair figcaption{
+/* Not scoped to .pair — the standalone wide-shot figures carry captions too. */
+figcaption{
   font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;
   text-transform:uppercase;color:var(--muted);margin-top:16px;text-align:center;
 }
@@ -360,7 +361,14 @@ footer{
   <div class="sec-inner">
     <span class="sec-label fi">Core tracking</span>
     <h2 class="sec-title fi fi-d1">Never lose track of <span>where you left off</span></h2>
-    <p class="sec-lede fi fi-d2">Your whole library in one list — filtered down to exactly what you want to see, next to a calendar that tells you when the next episode lands.</p>
+    <p class="sec-lede fi fi-d2">A queue of the exact episode you're up to on every show you're partway through — backed by your whole library in one list, filtered down to what you want to see, next to a calendar that tells you when the next one lands.</p>
+
+    <figure class="fi fi-d3" style="margin:48px 0 0">
+      <img class="shot shot-wide" src="img/upnext.jpg" loading="lazy" decoding="async"
+           width="1020" height="881" style="max-width:640px;margin:0 auto;aspect-ratio:1020/881"
+           alt="Watchtower's Up Next panel with a 'See all' link. Four queued episodes, each with a still, the show name, the episode you're up to, a season progress bar and a large purple check button to mark it watched: Will Trent season 3 episode 2 'Sunny-Side Up (2)' at 1 of 18, Only Murders in the Building season 2 episode 1 'Persons of Interest' at 0 of 10, Avatar the Last Airbender season 2 episode 2 'A Fight, Once Begun' at 1 of 7, and It's Always Sunny in Philadelphia season 15 episode 1 '2020: A Year in Review' at 0 of 8.">
+      <figcaption>What to watch next, one tap away</figcaption>
+    </figure>
 
     <div class="pair pair-phones">
       <figure class="fi">
@@ -394,12 +402,16 @@ footer{
         <p>Open the app and the first thing you see is what airs today — episode number, network, and streaming service included.</p>
       </div>
       <div class="feat">
+        <h3>A queue of what to watch next</h3>
+        <p>Every show you're partway through, lined up with the exact episode you're up to and how far into the season that leaves you. Tap the check to log it and the next episode takes its place; "See all" opens the rest of the queue.</p>
+      </div>
+      <div class="feat">
         <h3>Filter down to what you're after</h3>
         <p>Narrow to TV or movies, then to what you're watching, wish-listing, holding, or have finished — then again by whether a show is currently airing, between seasons, or wrapped up for good.</p>
       </div>
       <div class="feat">
         <h3>Order it however you think about it</h3>
-        <p>Sort by Up Next — what you're watching first, finished shows last — or fall back to plain A–Z or whatever you added most recently.</p>
+        <p>Order the whole library the way the queue does — what you're watching first, finished shows last — or fall back to plain A–Z or whatever you added most recently.</p>
       </div>
       <div class="feat">
         <h3>Every row says where you are</h3>
