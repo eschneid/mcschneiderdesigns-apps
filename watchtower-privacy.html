@@ -85,7 +85,7 @@
 
     <header>
       <h1>Watchtower — Privacy Policy</h1>
-      <p>Effective date: May 12, 2026 &nbsp;·&nbsp; Last updated: May 12, 2026</p>
+      <p>Effective date: May 12, 2026 &nbsp;·&nbsp; Last updated: September 29, 2026</p>
     </header>
 
     <p>
@@ -96,26 +96,56 @@
 
     <h2>1. Information We Collect</h2>
     <p><strong>Account information.</strong> When you create an account, we collect your
-    email address. If you sign in with Google, we also receive your name and profile
-    photo from Google as part of the authentication flow.</p>
+    email address and a user ID. If you sign in with Google or Apple, we also receive
+    your name and profile photo as part of the authentication flow. If you do not have a
+    photo, a generated pixel-art avatar is used in its place.</p>
 
     <p><strong>App content.</strong> The data you add to the app is stored in your
     personal account:</p>
     <ul>
-      <li>Your watchlist: titles, watch status, and season/episode progress</li>
+      <li>Your library: titles, watch status, ratings, and season/episode progress</li>
+      <li>Lists you create, and what you put in them</li>
+      <li>Notes you write about a show, whether private or shared with friends</li>
       <li>Streaming service preferences</li>
       <li>Notification preferences (e.g., morning-of reminders)</li>
     </ul>
 
+    <p><strong>Social features.</strong> If you add friends, we store the connection
+    between your accounts and your invite code. Your display name and photo are visible
+    to people you are connected to, along with activity such as adding or finishing a
+    show, and any comments or reactions you leave. Notes marked as shared are visible to
+    your friends; private notes are not.</p>
+
+    <p><strong>Notifications.</strong> If you turn reminders on, we store a notification
+    token for each device, together with an identifier for that device (the Android ID
+    on Android, the vendor identifier on iOS). The identifier is what lets us send each
+    reminder once per device rather than once per registration &mdash; without it,
+    reinstalling the app leaves more than one token registered to the same phone and
+    reminders arrive twice. We also record the device model and operating system version
+    alongside the result of registering, so we can tell why notifications failed to
+    arrive on a particular device.</p>
+
+    <p><strong>Usage analytics.</strong> The app uses Firebase Analytics, which collects
+    an app instance identifier and records events such as signing in, adding a show,
+    changing a filter, or opening a screen. This tells us which features are used. It
+    does not record what you type into search.</p>
+
     <p><strong>What we do not collect.</strong> We do not collect your location,
-    contacts, payment information, camera or microphone data, advertising identifiers,
-    or any behavioral analytics.</p>
+    contacts, payment information, camera or microphone data, or advertising
+    identifiers. We do not track you across other apps or websites, and none of the
+    above is used for advertising or profiling.</p>
 
     <h2>2. How We Use Your Information</h2>
     <ul>
-      <li>To provide and sync your watchlist across devices</li>
-      <li>To send local notifications you have opted into (scheduled on-device)</li>
-      <li>To look up show and movie metadata from The Movie Database (TMDb) on your behalf — no personally identifiable information is sent to TMDb</li>
+      <li>To provide and sync your library across devices</li>
+      <li>To send the reminders you have opted into. These are sent from our server
+          through Firebase Cloud Messaging, which means a scheduled job reads the air
+          dates of the shows in your library to decide what to send you and when</li>
+      <li>To show your activity, notes marked as shared, and profile to friends you have
+          connected with</li>
+      <li>To look up show and movie metadata from The Movie Database (TMDb) on your
+          behalf &mdash; no personally identifiable information is sent to TMDb</li>
+      <li>To understand which features are used, through the analytics described above</li>
     </ul>
     <p>We do not sell, rent, or share your information with third parties for
     advertising or marketing purposes.</p>
@@ -125,8 +155,14 @@
     policy.</p>
     <ul>
       <li>
-        <strong>Google Firebase</strong> (authentication and cloud database) —
+        <strong>Google Firebase</strong> (authentication, cloud database, push
+        notifications, and analytics) &mdash;
         <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a>
+      </li>
+      <li>
+        <strong>DiceBear</strong> (generates a default avatar when your account has no
+        photo) &mdash;
+        <a href="https://www.dicebear.com/legal/privacy-policy/" target="_blank" rel="noopener">dicebear.com/legal/privacy-policy</a>
       </li>
       <li>
         <strong>The Movie Database (TMDb)</strong> (show/movie metadata) —
@@ -138,10 +174,21 @@
       </li>
     </ul>
 
-    <h2>4. Data Retention</h2>
+    <h2>4. Data Retention and Deletion</h2>
     <p>Your data is stored for as long as your account is active. You can delete your
-    account at any time from the Profile screen inside the app. Deletion permanently
-    removes your account credentials and all associated watchlist data.</p>
+    account at any time from the Profile screen inside the app. Deletion is permanent
+    and removes your account credentials, your library, your lists, your notes, and the
+    notification tokens and device identifiers held for your devices.</p>
+
+    <p>Friend connections, activity posts and comments are stored separately, because
+    other people can see them, and are not removed automatically when you delete your
+    account. Email us and we will delete those too.</p>
+
+    <p>You do not have to delete your account to remove individual things: a show, a
+    list, a note, a comment, or a device's notification token can each be removed in the
+    app. Full instructions, including how to request deletion if you cannot reach the
+    app, are here:
+    <a href="https://mcschneiderdesigns.com/watchtower/delete-account/">mcschneiderdesigns.com/watchtower/delete-account/</a>.</p>
 
     <h2>5. Children's Privacy</h2>
     <p>The app is not directed at children under 13. We do not knowingly collect
