@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Watchtower — What's Changed</title>
+<meta name="description" content="Every release of Watchtower, the TV and movie tracker, and what changed in it.">
+<link rel="icon" href="/icons/watchtower.png">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#080808;--bg2:#0f0f0f;--bg-card:#131313;
+  --orange:#F7941D;--white:#FFFFFF;--text:#DADADA;--muted:#5e5e5e;
+  --border:rgba(247,148,29,0.13);
+  --wt:#675FF2;--wt-soft:#9A94F7;
+  --wt-border:rgba(103,95,242,.22);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;
+     font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--wt-soft)}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:8px;top:8px;background:var(--wt);color:#fff;padding:8px 14px;border-radius:6px;z-index:10}
+#nav{display:flex;align-items:center;justify-content:space-between;gap:16px;
+     padding:14px 20px;border-bottom:1px solid var(--border);background:var(--bg2)}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--white)}
+.nav-logo{border-radius:7px}
+.nav-name{font-family:'Rajdhani',sans-serif;font-weight:600;letter-spacing:.3px}
+.nav-links{display:flex;gap:18px;list-style:none;margin:0;padding:0;
+           font-family:'Rajdhani',sans-serif;font-weight:600}
+.nav-links a{color:var(--text);text-decoration:none}
+.nav-links a:hover{color:var(--orange)}
+.nav-cta{color:var(--orange)!important}
+main{max-width:760px;margin:0 auto;padding:48px 20px 72px}
+.head{display:flex;align-items:center;gap:16px;margin-bottom:8px}
+.head img{border-radius:16px}
+h1{font-family:'Orbitron',sans-serif;font-weight:700;color:var(--white);
+   font-size:clamp(28px,6vw,40px);margin:0;letter-spacing:.5px}
+.kicker{font-family:'Rajdhani',sans-serif;font-weight:600;color:var(--wt-soft);
+        margin:2px 0 0;letter-spacing:1px;text-transform:uppercase;font-size:13px}
+.lede{color:var(--muted);margin:0 0 40px}
+.lede a{color:var(--wt-soft)}
+.rel{border-left:2px solid var(--wt-border);padding:0 0 4px 20px;margin:0 0 36px}
+.rel-v{font-family:'Orbitron',sans-serif;font-weight:600;color:var(--white);
+       font-size:20px;margin:0 0 10px;display:flex;align-items:baseline;
+       gap:12px;flex-wrap:wrap}
+.rel-d{font-family:'Rajdhani',sans-serif;font-weight:600;font-size:13px;
+       color:var(--muted);letter-spacing:.5px;text-transform:uppercase}
+.rel-items{margin:0;padding-left:18px}
+.rel-items li{margin-bottom:9px}
+.rel-items strong{color:var(--white);font-weight:600}
+code{font-size:.9em;color:var(--wt-soft)}
+footer{border-top:1px solid var(--border);background:var(--bg2);
+       padding:26px 20px;text-align:center}
+.footer-links{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;
+              list-style:none;margin:0 0 12px;padding:0;
+              font-family:'Rajdhani',sans-serif;font-weight:600;font-size:14px}
+.footer-links a{color:var(--text);text-decoration:none}
+.footer-links a:hover{color:var(--orange)}
+.footer-copy{color:var(--muted);font-size:13px;margin:0}
+@media (max-width:560px){
+  .nav-links{gap:12px;font-size:14px}
+  .nav-name{display:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav id="nav">
+  <a href="/" class="nav-brand">
+    <img class="nav-logo" src="/icons/mcs-logo.png" alt="" width="38" height="38">
+    <span class="nav-name"><b>McS</b> Design Studios</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/watchtower/">Watchtower</a></li>
+    <li><a href="/#apps">Apps</a></li>
+    <li><a href="mailto:support@mcschneiderdesigns.com" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<main id="main">
+  <div class="head">
+    <img src="/icons/watchtower.png" alt="Watchtower app icon" width="64" height="64">
+    <div>
+      <h1>What's Changed</h1>
+      <p class="kicker">Watchtower</p>
+    </div>
+  </div>
+  <p class="lede">Every release, newest first. <a href="/watchtower/">Back to Watchtower</a></p>
+
+    <section class="rel">
+      <h2 class="rel-v">2.11.0<span class="rel-d">2026-10-20</span></h2>
+      <ul class="rel-items">
+        <li><strong>The Library tab splits into three views</strong> — Upcoming, Up Next and All Shows, just under the filters. Every show is still there under All Shows.</li>
+        <li><strong>Search as you type.</strong> Tap + and results appear after three letters. The Search button stays for short titles like 24 or ER.</li>
+        <li><strong>Up Next shows more</strong> now that it has a screen of its own, and a series you have just added stays at the top instead of sinking to the bottom.</li>
+        <li><strong>Premieres are separated from returning shows.</strong> A brand-new series is no longer filed under &quot;Coming Back&quot;, which it had never been part of.</li>
+        <li>A season that starts today reads as airing rather than upcoming.</li>
+        <li>The version at the bottom of Profile now shows the build number too.</li>
+      </ul>
+    </section>
+
+    <section class="rel">
+      <h2 class="rel-v">2.10.0<span class="rel-d">2026-10-11</span></h2>
+      <ul class="rel-items">
+        <li><strong>See which friends are watching the same show.</strong> Open a show and, if any of your friends have it, a count appears next to the rating — tap it to see who is watching, who finished and who gave up.</li>
+        <li><strong>Add a show straight from a friend's card</strong> on the Friends tab, without opening it first.</li>
+        <li><strong>Friend requests send a notification</strong>, both when somebody asks and when they accept.</li>
+        <li>The Friends tab was reorganised so your own activity stops taking permanent space.</li>
+        <li>Tap an actor's photo to see it full size.</li>
+      </ul>
+    </section>
+
+    <section class="rel">
+      <h2 class="rel-v">2.9.0<span class="rel-d">2026-10-09</span></h2>
+      <ul class="rel-items">
+        <li><strong>Mark seasons and episodes watched out of order.</strong> Open any show and find Seasons, under My Progress. Tick a whole season, or open one and tick single episodes. Watching series five before series one now says exactly that, and Up Next offers the earliest thing you have not seen.</li>
+      </ul>
+    </section>
+
+    <section class="rel">
+      <h2 class="rel-v">2.8<span class="rel-d">September 2026</span></h2>
+      <ul class="rel-items">
+        <li><strong>Watchtower on your home screen.</strong> An Up Next widget and a Tonight widget, in three sizes, with artwork.</li>
+        <li><strong>Tick an episode off without opening the app</strong>, straight from the widget.</li>
+        <li>Rows show how far through a show you are.</li>
+      </ul>
+    </section>
+
+    <section class="rel">
+      <h2 class="rel-v">2.7<span class="rel-d">September 2026</span></h2>
+      <ul class="rel-items">
+        <li><strong>Up Next</strong>, at the top of your library: pick up exactly where you left off, with the whole queue one tap away.</li>
+        <li><strong>Correct an air date</strong> when a show reaches your country later than TMDb says.</li>
+        <li>See what is left on a list.</li>
+      </ul>
+    </section>
+
+    <section class="rel">
+      <h2 class="rel-v">2.6<span class="rel-d">September 2026</span></h2>
+      <ul class="rel-items">
+        <li><strong>Make your own lists</strong>, ranked or unranked.</li>
+        <li><strong>Bring lists with you</strong> from IMDb, or from a web page.</li>
+      </ul>
+    </section>
+
+    <section class="rel">
+      <h2 class="rel-v">2.5<span class="rel-d">August 2026</span></h2>
+      <ul class="rel-items">
+        <li><strong>Bring your library with you</strong> — import from TV Time, Trakt or IMDb, and export your own.</li>
+        <li><strong>Explore a cast member</strong> and everything they have been in.</li>
+        <li>See the other films in a series.</li>
+      </ul>
+    </section>
+</main>
+
+<footer>
+  <ul class="footer-links">
+    <li><a href="/watchtower/">Watchtower</a></li>
+    <li><a href="/#apps">Apps</a></li>
+    <li><a href="/#about">About</a></li>
+    <li><a href="mailto:support@mcschneiderdesigns.com">Contact</a></li>
+  </ul>
+  <p class="footer-copy">&copy; 2026 McSchneider Design Studios</p>
+</footer>
+</body>
+</html>
